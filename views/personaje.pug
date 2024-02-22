@@ -1,0 +1,20 @@
+extends layout
+   
+block content
+    h1
+        strong Vista del personaje
+    #container
+        each personaje in personajes
+            .card(style='width: 13rem')
+                img.card-img-top(src=personaje.image alt='...')
+                .card-body
+                    p
+                        strong Nombre: 
+                        =   personaje.name
+                    p
+                        strong Sexo: 
+                        =    personaje.gender
+                    p
+                        strong creado: 
+                        =    personaje.created
+                    a.btn.btn-warning(href=personaje.url) Descargar ficha
